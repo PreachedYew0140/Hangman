@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Fallout Hangman</title>
+	<title>Fallout 4 Hangman</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
@@ -10,9 +10,9 @@
 	<div class='container'>
 		<div class='jumbotron'>
  			<div class='container'>
-				<h1 style="color: white"> Fallout Hangman </h1>
-				<h2 style="color: white"> Guess the name of the weapons </h2>
-				<small> Click any letter to begin... </small>
+				<h1 style="color: white"> Fallout 4 Hangman </h1>
+				<h2 style="color: white"> Guess the name of the weapons from the Fallout series</h2>
+				<small style="color: white"> Click any letter to begin... </small>
 			</div>
 		</div>
 	</div>
@@ -22,11 +22,11 @@
 		<div class="col-ig-12">
 			<div class="panel panel-default">
 				<div class="pane-heading">
-					<h3 class="panel-title"><strong> Word to Guess </strong></h3>
+					<h3 style="color: blue" class="panel-title"><strong> Word to Guess </strong></h3>
 				</div>
 				<div class="panel-body">
 
-					<h3 id="word-blanks"> _ _ _ _ _ _ _ _ _ _ </h3>
+					<h3 style="color: red" id="word-blanks"> _ _ _ _ _ _ _ _ _ _ </h3>
 
 				</div>
 			</div>
@@ -35,32 +35,36 @@
 
 			<div class="panel panel-default">
 				<div class="panel-body"></div>
-				<strong> Wrong Guesses: </strong> <span id="wrong-guesses"></span>
+				<strong style="color: blue"> Wrong Guesses: </strong> <span id="wrong-guesses"></span>
 			</div>
 
 
 			<div class="panel panel-default">
 				<div class="panel-body"></div>
-				<strong> Guesses Left: </strong> <span id="guesses-left"> 0 </span>
+				<strong style="color: blue"> Guesses Left: </strong> <span id="guesses-left"> 0 </span>
 			</div>
 
 
 			<div class="panel panel-default">
 				<div class="panel-body"></div>
-				<strong> Wins: </strong> <span id="win-counter"> 0 </span>
+				<strong style="color: blue"> Wins: </strong> <span id="win-counter"> 0 </span>
 			</div>
 
 
 				<div class="panel panel-default">
 				<div class="panel-body"></div>
-				<strong> Losses: </strong> <span id="loss-counter"> 0 </span>
+				<strong style="color: blue"> Losses: </strong> <span id="loss-counter"> 0 </span>
 			</div>
 
 
 		</div>
 	</div>
 
-	
+	<script>
+window.onload = function() { // reload file every second
+setInterval(function() { location.reload(); } , 1000);
+};
+</script>
 	<script src="logic.js"> </script>
 
 </body>

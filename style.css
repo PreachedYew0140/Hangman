@@ -1,3 +1,11 @@
 .jumbotron {
 	background-image: url('https://cdn.images.express.co.uk/img/dynamic/143/590x/Fallout-4-mods-launching-with-update-1-8-733074.jpg');
 }
+
+html { 
+  background: url(images/bg.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
