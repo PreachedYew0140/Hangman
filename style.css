@@ -9,3 +9,19 @@ html {
   -o-background-size: cover;
   background-size: cover;
 }
+
+body {
+  background-color: white;
+}
+
+.row {
+	background-color: black;
+}
+
+.panel-body{
+	background-color: black;
+}
+
+.panel-default {
+	background-color: black;
+}
