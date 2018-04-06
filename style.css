@@ -12,6 +12,8 @@ html {
 
 body {
   background-color: white;
+  text-align: center;
+  border: 10px solid red;
 }
 
 .row {
