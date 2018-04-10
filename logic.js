@@ -119,7 +119,7 @@ function roundComplete() {
 
 
 
-var fruitsList = ["banana", "apple", "berry"];
+var fruitsList = ["Aeternus", "Railway Rifle", "Laser Rifle"];
 
 var chosenWord = '';
 
@@ -184,7 +184,7 @@ for (var i = 0; i < numBlanks; i++) {
 
 
 function roundComplete() {
-console.log("WinCount: " + winCounter + " | LossCount: " + lossCounter +
+	console.log("WinCount: " + winCounter + " | LossCount: " + lossCounter +
 " | NumGuesses: " + numGuesses);
 
 document.getElementById("guesses-left").innerHTML = numGuesses; 

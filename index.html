@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<!-- Bootstrap CDN -->
 	<title>Fallout 4 Hangman</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 
+	<!-- Bootstrap Container that will hold everything -->
 	<div style="color: red" class='container'>
+		<!-- Jumbotron holds the title section. -->
 		<div class='jumbotron'>
  			<div style="color: black" class='container'>
 				<h1 style="color: white"> Fallout 4 Hangman </h1>
@@ -17,54 +20,58 @@
 		</div>
 	</div>
 
-
+	<!-- Game counters are held here. Panels are being used to hold various sections. -->
 	<div style="color: red" class="row">
 		<div class="col-ig-12">
+			<!-- First panel: holds the word to gues  (blanks and guessed words) -->
 			<div class="panel panel-default">
 				<div class="pane-heading">
 					<h3 style="color: blue" class="panel-title"><strong> Word to Guess </strong></h3>
 				</div>
 				<div class="panel-body">
 
+					<!-- Here is what we'll be replacing with letters as the user guesses the word. -->
 					<h3 style="color: red" id="word-blanks"> _ _ _ _ _ _ _ _ _ _ </h3>
 
 				</div>
 			</div>
 
 			
-
+			<!-- Second Panel: Holds the list of wrong user guesses -->
 			<div class="panel panel-default">
 				<div class="panel-body"></div>
+				<!-- Here we'll be dumping the wrong guesses -->
 				<strong style="color: blue"> Wrong Guesses: </strong> <span id="wrong-guesses"></span>
 			</div>
 
-
+			<!-- Third Panel: Holds the number of wrong guesses by player -->
 			<div class="panel panel-default">
 				<div class="panel-body"></div>
+				<!-- Here we'll dump the number of guesses left -->
 				<strong style="color: blue"> Guesses Left: </strong> <span id="guesses-left"> 0 </span>
 			</div>
 
-
+			<!-- Fourth Panel: Holds the number of wins -->
 			<div class="panel panel-default">
 				<div class="panel-body"></div>
+				<!-- Here we'll dump the number of wins  -->
 				<strong style="color: blue"> Wins: </strong> <span id="win-counter"> 0 </span>
 			</div>
 
-
+				<!-- Fifth Panel: Hold sthe number of losses -->
 				<div class="panel panel-default">
 				<div class="panel-body"></div>
+				<!-- Here we'll dump the number of losses -->
 				<strong style="color: blue"> Losses: </strong> <span id="loss-counter"> 0 </span>
 			</div>
 
 
 		</div>
 	</div>
-
-	<script>
-window.onload = function() { // reload file every second
-setInterval(function() { location.reload(); } , 1000);
-};
-</script>
+	
+	<!-- Adds a link to the javascript file. 
+		It loads at the bottom so it waits for the HTML content to display first. 
+		If you put this at the top it will crash because the HTML IDs won't exist yet -->
 	<script src="logic.js"> </script>
 
 </body>
