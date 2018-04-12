@@ -118,21 +118,26 @@ function roundComplete() {
 
 
 
-
+// Array of word option (all lowercase)
 var fruitsList = ["Aeternus", "Railway Rifle", "Laser Rifle"];
 
+// Computer selected solution will be here
 var chosenWord = '';
 
+// Breaks the solution into individual letters
 var lettersInChosenWord= [];
 
+// Number of blanks we show based on the solution
 var numBlanks = 0;
 
+// Holds a mux of blanks and solved letters
 var blanksAndSuccesses = [];
 
 var wrongGuesses = [];
 
 var letterGuessed = '';
 
+// Game counters
 var winCounter = 0;
 var lossCounter = 0;
 var numGuesses = 9;
@@ -142,23 +147,43 @@ var numGuesses = 9;
 
 function startGame() {
 
-numGuesses = 9; chosenWord = fruitsList[Math.floor(Math.random() * fruitsList.length)]; lettersInChosenWord = chosenWord.split(""); 
+	// Resets the guesses back to 0
+	numGuesses = 9; 
 
-numBlanks = lettersInChosenWord.length; 
+	// Solution chosen randomly from wordlist
+	chosenWord = fruitsList[Math.floor(Math.random() * fruitsList.length)]; 
 
-console.log(chosenWord); blanksAndSuccesses = []; 
+	// The word is broken into indiviual letters
+	lettersInChosenWord = chosenWord.split(""); 
 
-wrongGuesses = []; 
+	// Counts the number of letters in the word
+	numBlanks = lettersInChosenWord.length; 
+
+	//Prints the solution in the console (for testing purposes)
+	console.log(chosenWord); 
 	
+	// Resets the guess and success array at each round
+	blanksAndSuccesses = []; 
+
+	// Resets the wrong guesses from the previous round
+	wrongGuesses = []; 
+	
+	/* Fills up the blanksAndSuccesses list with the appropiate number of blanks
+	which is based on the number of letter in the solution */
 	for (var i = 0; i < numBlanks; i++) { 
+		blanksAndSuccesses.push("_"); 
+	} 
 		
-		blanksAndSuccesses.push("_"); } 
-		
+	// Prints the initial blanks in the console
 		console.log(blanksAndSuccesses); 
 		
-
+		// Reprints the guesses left to 9
 		document.getElementById("guesses-left").innerHTML = numGuesses; 
-		document.getElementById("word-blanks").innerHTML = blanksAndSuccesses.join(" "); 
+		
+		//Prints the blanks at the beginning of each round in the HTML
+		document.getElementById("word-blanks").innerHTML = blanksAndSuccesses.join(" ");
+		
+		// Clears the wrong guesses from the previous round
 		document.getElementById("wrong-guesses").innerHTML = wrongGuesses.join(" ");
 
 }
