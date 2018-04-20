@@ -188,21 +188,42 @@ function startGame() {
 
 }
 
+// Where we will do all of the comparisons for matches
 function checkLetters(letter) {
-var letterInWord = false;
+	// boolean which will be changed based on whether or not
+	// a user letter is found in the word
+	var letterInWord = false;
 
-for (var i = 0; i < numBlanks; i++) { 
-	if (chosenWord[i] === letter) { 
-		letterInWord = true; } 
+	// Check if a letter exists inside the array at all
+	for (var i = 0; i < numBlanks; i++) { 
+		if (chosenWord[i] === letter) { 
+			// If the the letter exists then change this boolean to true
+			//This will be used in the next step
+			letterInWord = true; 
+		} 
 	} 
-		if (letterInWord) { 
-			for (var j = 0; j < numBlanks; j++) { 
-				if (chosenWord[j] === letter) { 
-					blanksAndSuccesses[j] = letter; } 
-				} 
-				console.log(blanksAndSuccesses); } 
-				else {
-					wrongGuesses.push(letter); numGuesses--; }
+
+	//If the letter exists somewhere in the word, then figure out
+	// exactly where (which indices)
+	if (letterInWord) { 
+		// Loop through the word
+		for (var j = 0; j < numBlanks; j++) { 
+			//Ppoopulate the blanksAndSucceses with every instance of the letter 
+			if (chosenWord[j] === letter) { 
+				// Set specific blank spaces to equal the correct letter
+				// When there is a match
+				blanksAndSuccesses[j] = letter; } 
+			} 
+		}
+	// Log the current blanks and successes for testing purposes
+	console.log(blanksAndSuccesses); 
+} 
+	else {
+		// Then we add the letter to the lisut of wrong letter 
+		wrongGuesses.push(letter); 
+		// We also subtract one of the guesses (decrement the guesses)
+		numGuesses--; 
+	}
 }
 
 
