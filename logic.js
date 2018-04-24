@@ -1,4 +1,4 @@
-/*
+--/*
 var weapons = ["fatboy","laser rifle", "railway rifle"];
 
 var chosenword = '';
@@ -229,31 +229,46 @@ function checkLetters(letter) {
 
 
 
+// The code that needs to be run after each guess is made
 function roundComplete() {
+	//Tells us the wins, losses and guesses left
 	console.log("WinCount: " + winCounter + " | LossCount: " + lossCounter +
-" | NumGuesses: " + numGuesses);
+		" | NumGuesses: " + numGuesses);
 
+// HTML UPDATES
+// Updates the HTML to reflect the new number of guesses
 document.getElementById("guesses-left").innerHTML = numGuesses; 
+// Prints the array of guesses and blanks onto the page
 document.getElementById("word-blanks").innerHTML = blanksAndSuccesses.join(" "); 
+// Prints the wrong guesses onto the page 
 document.getElementById("wrong-guesses").innerHTML = wrongGuesses.join(" "); 
 
+// If we guessed all the letters to match the solution 
 if (lettersInChosenWord.toString() === blanksAndSuccesses.toString()) { 
-	
-	winCounter++; alert("You win!"); document.getElementById("win-counter").innerHTML = winCounter; startGame(); 
+	winCounter++; alert("You win!"); 
+	// Updates the win counter on the HTML
+	document.getElementById("win-counter").innerHTML = winCounter; 
+	// Restart the game 
+	startGame(); 
 	
 	} 
-	
+	// If we run out of guesses
 	else if (numGuesses === 0) { 
-		
 		lossCounter++; alert("You lose"); 
-		
+		// Updates the loss counter in the HTML
 		document.getElementById("loss-counter").innerHTML = lossCounter; startGame(); }
 }
 
+// MAIN PROCESS (THIS IS THE CODE THAT CONTROLS WHAT IS ACTUAKKY RUN)
+// Starts the game by running the startGame() function
 startGame();
 
+// Then initiates the function for capturing key clicks 
 document.onkeyup = function(event) {
-var letterGuessed = String.fromCharCode(event.keyCode).toLowerCase();
-checkLetters(letterGuessed);
-roundComplete();
+	// Converts all key clicks to lowercase letters
+	var letterGuessed = String.fromCharCode(event.keyCode).toLowerCase();
+	// Runs the code to checkfor correct guesses
+	checkLetters(letterGuessed);
+	// Runs the code that ends each round 
+	roundComplete();
 };
